@@ -1170,6 +1170,158 @@
     min-height: 120px;
     font-family: 'Inter', sans-serif;
   }
+
+  /* ── Senior Day RSVP card ── */
+  .type-card.rsvp-card {
+    background: linear-gradient(135deg, #fff8f0 0%, #fff3e6 100%);
+    border-color: #f5c07a;
+  }
+  .type-card.rsvp-card:hover {
+    border-color: #e41c38;
+    box-shadow: 0 12px 40px rgba(228,28,56,0.13);
+  }
+
+  /* ── RSVP info box above the form ── */
+  #view-rsvp .cred-info-box {
+    background: #cc0000;
+    border: none;
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(180,0,0,.18);
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+  #view-rsvp .cred-info-box .cred-info-title {
+    color: #fff;
+  }
+  #view-rsvp .cred-info-box p {
+    color: rgba(255,255,255,.9);
+  }
+
+  /* ── RSVP outer form box ── */
+  #view-rsvp .cred-form-box {
+    background: #cc0000;
+    border: none;
+    border-radius: 10px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: 0 4px 24px rgba(180,0,0,0.18);
+    color: #fff;
+  }
+  #view-rsvp .cred-form-box p,
+  #view-rsvp .cred-form-box label,
+  #view-rsvp .cred-form-box .cred-label {
+    color: #fff;
+  }
+  #view-rsvp .cred-required { color: #ffd0d0; }
+
+  /* ── RSVP form elements ── */
+  .rsvp-section-heading {
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: .4rem;
+  }
+  .rsvp-section-rule {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,.3);
+    margin-bottom: 1.1rem;
+  }
+  .rsvp-btn-row {
+    display: flex;
+    gap: .75rem;
+    flex-wrap: wrap;
+  }
+  .rsvp-toggle-btn {
+    padding: .6rem 2rem;
+    border: 2px solid rgba(255,255,255,.8);
+    background: transparent;
+    color: #fff;
+    font-size: .9rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background .15s, color .15s, border-color .15s;
+  }
+  .rsvp-toggle-btn:hover {
+    background: rgba(255,255,255,.15);
+  }
+  .rsvp-toggle-btn.rsvp-toggle-active {
+    background: #fff;
+    border-color: #fff;
+    color: #cc0000;
+  }
+  .rsvp-guests-note {
+    background: rgba(0,0,0,.18);
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 6px;
+    padding: .75rem 1rem;
+    font-size: .82rem;
+    color: #fff;
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+  }
+  .rsvp-guest-row {
+    background: #a30000;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 8px;
+    padding: 1rem 1rem .75rem;
+    margin-bottom: .85rem;
+    color: #fff;
+  }
+  .rsvp-guest-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .6rem;
+  }
+  .rsvp-guest-label {
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .rsvp-guest-required-tag {
+    font-size: .7rem;
+    font-weight: 600;
+    color: rgba(255,255,255,.7);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+  }
+  /* keep inputs white-on-white for readability inside red boxes */
+  #view-rsvp .cred-input {
+    background: #fff;
+    color: #111;
+    border-color: rgba(255,255,255,.5);
+  }
+  #view-rsvp .cred-input::placeholder { color: #999; }
+  .rsvp-add-guest-btn {
+    display: inline-block;
+    margin-top: .25rem;
+    margin-bottom: 1.25rem;
+    padding: .55rem 1.4rem;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-size: .88rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background .15s, color .15s;
+  }
+  .rsvp-add-guest-btn:hover {
+    background: #fff;
+    color: #cc0000;
+  }
+  .rsvp-action-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
 </style>
 </head>
 <body>
@@ -1231,6 +1383,19 @@
           <div class="type-label">Away Games</div>
           <div class="type-desc">Travel weekends — hotel blocks, watch party locations, ticket info, and road trip logistics.</div>
           <div class="type-count" id="away-count"></div>
+        </div>
+      </div>
+
+      <!-- SENIOR DAY RSVP -->
+      <div class="home-section-divider">
+        <div class="home-section-label">🎓 Senior Day · Ohio State · Nov. 21</div>
+      </div>
+      <div class="type-grid">
+        <div class="type-card rsvp-card" onclick="showRsvp()" style="grid-column:1/-1">
+          <div class="type-icon">🎉</div>
+          <div class="type-label">Senior Day Family Tunnel Walk RSVP</div>
+          <div class="type-desc">Line the tunnel walk to cheer on the seniors and your Huskers! All families invited, no matter the class your son is in. RSVP so we can plan accordingly.</div>
+          <div class="type-count">RSVP Now →</div>
         </div>
       </div>
 
@@ -1676,7 +1841,76 @@
       </div>
     </div>
 
-    <!-- ── VIEW 6: CONTACT US ── -->
+    <!-- ── VIEW 6: SENIOR DAY TUNNEL WALK RSVP ── -->
+    <div id="view-rsvp" style="display:none">
+      <button class="back-btn" onclick="goHome()">← Back</button>
+      <div class="page-heading">Senior Day Family Tunnel Walk RSVP</div>
+      <div class="page-sub">Nebraska vs. Ohio State · Saturday, November 21, 2026</div>
+      <div class="accent-line"></div>
+
+      <!-- ── FORM PANEL ── -->
+      <div id="rsvp-form-panel">
+        <div class="cred-info-box" style="margin-bottom:1.5rem;">
+          <div class="cred-info-title">🎉 You're Invited — All Families Welcome</div>
+          <p>Line the tunnel walk to cheer on the seniors and your Huskers! All families are invited, no matter the class your son is in. Please submit one RSVP per son.</p>
+        </div>
+
+        <div class="cred-form-box">
+
+          <!-- YOUR SON section -->
+          <div class="rsvp-section-heading">YOUR SON</div>
+          <div class="rsvp-section-rule"></div>
+          <div class="cred-field-group" style="margin-bottom:1.25rem;">
+            <label class="cred-label">Son's Name <span class="cred-required">*</span></label>
+            <input type="text" id="rsvp-player" class="cred-input" placeholder="First and last name">
+          </div>
+
+          <!-- attending yes/no -->
+          <div class="cred-field-group" style="margin-bottom:1.5rem;">
+            <label class="cred-label">Will you or any family members be lining the Family Tunnel Walk? <span class="cred-required">*</span></label>
+            <div class="rsvp-btn-row" style="margin-top:.75rem;">
+              <button type="button" class="rsvp-toggle-btn" id="rsvp-btn-yes" onclick="rsvpSetAttending('Yes')">Yes</button>
+              <button type="button" class="rsvp-toggle-btn" id="rsvp-btn-no"  onclick="rsvpSetAttending('No')">No</button>
+            </div>
+          </div>
+
+          <!-- GUESTS section — shown only when Yes -->
+          <div id="rsvp-guests-section" style="display:none;">
+            <div class="rsvp-section-heading" style="margin-top:.5rem;">GUESTS</div>
+            <div class="rsvp-section-rule"></div>
+            <div class="rsvp-guests-note">
+              Guest 1 is required. Guests 2–15 are optional. If you enter a name, please also enter their relationship to your son.
+            </div>
+
+            <div id="rsvp-guests-container"></div>
+
+            <button type="button" class="rsvp-add-guest-btn" id="rsvp-add-btn" onclick="rsvpAddGuest()">+ Add Another Guest</button>
+          </div>
+
+          <div id="rsvp-error" class="cred-error" style="display:none;margin-top:1rem;"></div>
+
+          <div class="rsvp-action-row" style="margin-top:1.5rem;">
+            <button class="cred-submit-btn" id="rsvp-submit-btn" onclick="submitRsvp()">Submit RSVP</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SUCCESS PANEL ── -->
+      <div id="rsvp-success-panel" style="display:none;">
+        <div class="cred-form-box" style="text-align:center;padding:2.5rem 1.5rem;">
+          <div style="font-size:3rem;margin-bottom:1rem;">🌽</div>
+          <div style="font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:.5rem;">RSVP Submitted!</div>
+          <p style="color:#ffe0e0;margin-bottom:2rem;">Thank you! We'll see you on Senior Day. <strong style="color:#fff;">Go Big Red!</strong></p>
+          <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+            <button class="cred-submit-btn" style="background:#1a1a1a;min-width:160px;" onclick="goHome()">← Return Home</button>
+            <button class="cred-submit-btn" style="min-width:160px;" onclick="showRsvp()">Submit Another RSVP</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ── VIEW 7: CONTACT US ── -->
     <div id="view-contact" style="display:none">
       <button class="back-btn" onclick="goHome()">← Back</button>
       <div class="page-heading">Contact Us</div>
@@ -2439,7 +2673,7 @@ function initHome() {
 
 /* ── Navigation ── */
 function showView(id) {
-  ['view-home','view-list','view-detail','view-maps','view-credentials','view-contact'].forEach(v => {
+  ['view-home','view-list','view-detail','view-maps','view-credentials','view-rsvp','view-contact'].forEach(v => {
     document.getElementById(v).style.display = v === id ? 'block' : 'none';
   });
 }
@@ -2769,7 +3003,7 @@ function setBreadcrumb(type, game) {
     s2.style.display = 'none'; bg.style.display = 'none';
     return;
   }
-  const typeLabel = type === 'home' ? 'Home Games' : type === 'away' ? 'Away Games' : type === 'cred' ? 'Credentials' : 'Contact Us';
+  const typeLabel = type === 'home' ? 'Home Games' : type === 'away' ? 'Away Games' : type === 'cred' ? 'Credentials' : type === 'rsvp' ? 'Tunnel Walk RSVP' : 'Contact Us';
   s1.style.display = 'inline'; bt.style.display = 'inline';
   bt.textContent = typeLabel;
 
@@ -2867,6 +3101,150 @@ function submitCredentialRequest() {
 }
 
 /* ── FALL CAMP removed ── */
+
+/* ══════════════════════════════════════════════════════
+   SENIOR DAY TUNNEL WALK RSVP
+   Posts to GOOGLE_SHEET_URL with formType = 'TunnelWalkRSVP'
+══════════════════════════════════════════════════════ */
+const RSVP_MAX_GUESTS = 15;
+let rsvpAttending = null;   /* 'Yes' | 'No' | null */
+let rsvpGuestCount = 0;     /* visible guest rows */
+
+function rsvpSetAttending(val) {
+  rsvpAttending = val;
+  document.getElementById('rsvp-btn-yes').classList.toggle('rsvp-toggle-active', val === 'Yes');
+  document.getElementById('rsvp-btn-no').classList.toggle('rsvp-toggle-active',  val === 'No');
+  const section = document.getElementById('rsvp-guests-section');
+  if (val === 'Yes') {
+    section.style.display = 'block';
+    if (rsvpGuestCount === 0) rsvpAddGuest(); /* auto-add first guest row */
+  } else {
+    section.style.display = 'none';
+  }
+}
+
+function rsvpAddGuest() {
+  if (rsvpGuestCount >= RSVP_MAX_GUESTS) return;
+  rsvpGuestCount++;
+  const n = rsvpGuestCount;
+  const container = document.getElementById('rsvp-guests-container');
+  const div = document.createElement('div');
+  div.className = 'rsvp-guest-row';
+  div.id = `rsvp-guest-row-${n}`;
+  div.innerHTML = `
+    <div class="rsvp-guest-header">
+      <span class="rsvp-guest-label">Guest ${n}${n === 1 ? ' <span class="cred-required">*</span>' : ''}</span>
+      ${n === 1 ? '<span class="rsvp-guest-required-tag">Required</span>' : ''}
+    </div>
+    <div class="cred-field-row" style="gap:.75rem;">
+      <div class="cred-field-group" style="flex:1 1 160px;">
+        <label class="cred-label" style="font-size:.78rem;">Guest ${n} Name${n === 1 ? ' *' : ''}</label>
+        <input type="text" id="rsvp-g${n}-name" class="cred-input" placeholder="Full name">
+      </div>
+      <div class="cred-field-group" style="flex:1 1 180px;">
+        <label class="cred-label" style="font-size:.78rem;">Relationship to Son${n === 1 ? ' *' : ''}</label>
+        <input type="text" id="rsvp-g${n}-rel" class="cred-input" placeholder="e.g. Mother, Father, Sibling">
+      </div>
+    </div>`;
+  container.appendChild(div);
+  /* hide Add button when cap reached */
+  if (rsvpGuestCount >= RSVP_MAX_GUESTS) {
+    document.getElementById('rsvp-add-btn').style.display = 'none';
+  }
+}
+
+function showRsvp() {
+  rsvpAttending  = null;
+  rsvpGuestCount = 0;
+  /* reset player field */
+  const p = document.getElementById('rsvp-player');
+  if (p) p.value = '';
+  /* reset toggle buttons */
+  ['rsvp-btn-yes','rsvp-btn-no'].forEach(id => {
+    const b = document.getElementById(id);
+    if (b) b.classList.remove('rsvp-toggle-active');
+  });
+  /* clear and hide guests */
+  const gc = document.getElementById('rsvp-guests-container');
+  if (gc) gc.innerHTML = '';
+  const gs = document.getElementById('rsvp-guests-section');
+  if (gs) gs.style.display = 'none';
+  /* reset add button */
+  const ab = document.getElementById('rsvp-add-btn');
+  if (ab) ab.style.display = 'inline-block';
+  /* reset error */
+  const err = document.getElementById('rsvp-error');
+  if (err) { err.textContent = ''; err.style.display = 'none'; }
+  /* reset submit btn */
+  const btn = document.getElementById('rsvp-submit-btn');
+  if (btn) { btn.textContent = 'Submit RSVP'; btn.disabled = false; }
+  /* show form, hide success */
+  document.getElementById('rsvp-form-panel').style.display    = 'block';
+  document.getElementById('rsvp-success-panel').style.display = 'none';
+  showView('view-rsvp');
+  setBreadcrumb('rsvp', null);
+  window.scrollTo(0, 0);
+}
+
+function submitRsvp() {
+  const player  = (document.getElementById('rsvp-player')?.value || '').trim();
+  const errEl   = document.getElementById('rsvp-error');
+  errEl.style.display = 'none';
+
+  if (!player) {
+    errEl.textContent = 'Please enter your son\'s name.';
+    errEl.style.display = 'block'; return;
+  }
+  if (!rsvpAttending) {
+    errEl.textContent = 'Please indicate whether you will be attending the tunnel walk.';
+    errEl.style.display = 'block'; return;
+  }
+  if (rsvpAttending === 'Yes') {
+    const g1name = (document.getElementById('rsvp-g1-name')?.value || '').trim();
+    const g1rel  = (document.getElementById('rsvp-g1-rel')?.value  || '').trim();
+    if (!g1name || !g1rel) {
+      errEl.textContent = 'Please fill in Guest 1\'s name and relationship (required).';
+      errEl.style.display = 'block'; return;
+    }
+  }
+
+  const btn = document.getElementById('rsvp-submit-btn');
+  btn.textContent = 'Submitting…'; btn.disabled = true;
+
+  const params = new URLSearchParams({
+    formType:  'TunnelWalkRSVP',
+    attending: rsvpAttending,
+    player:    player,
+    submitted: new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' })
+  });
+
+  for (let i = 1; i <= rsvpGuestCount; i++) {
+    const name = (document.getElementById(`rsvp-g${i}-name`)?.value || '').trim();
+    const rel  = (document.getElementById(`rsvp-g${i}-rel`)?.value  || '').trim();
+    if (name) {
+      params.append(`guest${i}Name`,         name);
+      params.append(`guest${i}Relationship`, rel || '—');
+    }
+  }
+
+  fetch(GOOGLE_SHEET_URL, {
+    method: 'POST', mode: 'no-cors',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: params.toString()
+  })
+  .then(() => {
+    document.getElementById('rsvp-form-panel').style.display    = 'none';
+    document.getElementById('rsvp-success-panel').style.display = 'block';
+    window.scrollTo(0, 0);
+  })
+  .catch(() => {
+    errEl.textContent = 'There was a problem submitting your RSVP. Please try again or contact your team liaison.';
+    errEl.style.display = 'block';
+  })
+  .finally(() => {
+    btn.textContent = 'Submit RSVP'; btn.disabled = false;
+  });
+}
 
 /* ── Contact Us ── */
 const CONTACT_EMAIL_URL = 'https://script.google.com/macros/s/AKfycbyw22fyNqlFo8Rh75OoHWsswnF8R6LdxHodJLDPjxvA2XYIbU48A6PQPrWuuEG7LlLv/exec';

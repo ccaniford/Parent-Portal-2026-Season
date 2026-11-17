@@ -3285,13 +3285,12 @@ function submitRsvp() {
 
   const adaNeeds = (document.getElementById('rsvp-ada')?.value || '').trim();
 
-  const params = new URLSearchParams({
-    formType:  'TunnelWalkRSVP',
-    attending: rsvpAttending,
-    player:    player,
-    adaNeeds:  adaNeeds || 'None',
-    submitted: new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' })
-  });
+  const params = new URLSearchParams();
+  params.append('formType',  'TunnelWalkRSVP');
+  params.append('attending', rsvpAttending);
+  params.append('player',    player);
+  params.append('adaNeeds',  adaNeeds || 'None');
+  params.append('submitted', new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' }));
 
   for (let i = 1; i <= rsvpGuestCount; i++) {
     const name = (document.getElementById(`rsvp-g${i}-name`)?.value || '').trim();

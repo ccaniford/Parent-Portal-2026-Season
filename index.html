@@ -2080,8 +2080,8 @@ const GAMES = [
     id: 'home-7', type: 'home', gameNum: 11,
     opponent: 'Ohio State Buckeyes',
     date: 'Saturday, November 21, 2026',
-    kickoff: 'TBD',
-    network: 'TBD',
+    kickoff: '11:00 AM CDT',
+    network: 'FOX',
     location: 'Memorial Stadium · Lincoln, NE',
     notes: '🎓 Senior Day — We will be celebrating our senior players and their families before the game. More details regarding Senior Day specifics will be shared closer to the game.',
     parking: 'The following lots are non-reserved/general admission lots: Lots 7, 9, 10, 11, 14, 16, 17, 18, 19, 20, 21, 25, 27, and 31. Please reference the parking map located in the map section at the bottom of the page.',
@@ -2104,10 +2104,16 @@ const GAMES = [
     meetupContact: 'Non-immediate family members are welcome — enter the building together with the player family.',
     meetupNotes: 'The only area player families may be post-game is the OLC lobby. See attached map for location.',
     depthOff: '', depthDef: '', depthST: '',
-    streamProvider: 'TBD',
+    streamProvider: 'FOX',
     streamDate: 'Saturday, November 21, 2026',
-    streamTime: 'TBD',
-    itinerary: [],
+    streamTime: '11:00 AM CDT',
+    legacyTimeOverride: '8:45 AM CDT',
+    itinerary: [
+      { time: '8:45 AM', event: 'Husker Legacy Walk', detail: 'East side of Memorial Stadium — corner of N 14th St & Vine St. Team walks down the Hall of Fame Walk into the Osborne Legacy Complex (OLC).' },
+      { time: '9:30 AM', event: 'Gates Open', detail: 'Memorial Stadium gates open for entry. Gate 22 available for player families.' },
+      { time: '11:00 AM', event: 'Kickoff', detail: 'Nebraska vs. Ohio State Buckeyes — Memorial Stadium, Lincoln, NE. TV: FOX.' },
+      { time: 'Post-Game', event: 'Player Meet-Up', detail: 'Hawks Championship Center Indoor Practice Field. Enter through the side doors of Hawks, about halfway down the building. Open up to 1 hour after the game.' }
+    ],
     roster: []
   },
 

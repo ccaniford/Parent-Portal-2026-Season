@@ -3150,6 +3150,7 @@ function submitCredentialRequest() {
     submitted: new Date().toLocaleString('en-US', { timeZone: 'America/Chicago' })
   });
 
+  console.log('RSVP params:', params.toString());
   fetch(GOOGLE_SHEET_URL, {
     method: 'POST', mode: 'no-cors',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -3301,6 +3302,7 @@ function submitRsvp() {
     }
   }
 
+  console.log('RSVP params:', params.toString());
   fetch(GOOGLE_SHEET_URL, {
     method: 'POST', mode: 'no-cors',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
